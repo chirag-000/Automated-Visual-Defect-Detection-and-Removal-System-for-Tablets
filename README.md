@@ -40,3 +40,78 @@ You can follow these steps to run inference on this model: <br>
 Assuming you have anaconda3 installed just import this [`environment.yml`](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/environment.yml) file to a new environment. <br>
 Or follow any tutorial like [this](https://youtu.be/IHbJcOex6dk?t=318&si=qtvQ1Dr2ayxCmYeS), to run the model on your computer.
 
+### 4. Real-Time Defect Detection
+Launch vscode in the conda env, run this is python script ([`script.py`](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/script.py)) to:
+* Load the YOLOv8 model and run inference.
+* Write detection results (1 for defected, 0 for non-defected) to data.txt.
+* Added a 1-second delay before writing to avoid redundant detections.
+```
+from ultralytics import YOLO
+import time
+
+# Load model
+model = YOLO('best.pt')
+
+# Run inference with streaming
+results = model(source=0, show=True, conf=0.6, save=True, stream=True)
+
+# Process results
+for result in results:
+    # For each detection, get class names and write to file
+    if result.boxes:  # Check if there are any detections
+        with open("C:/Chirag/data.txt", "w") as file:  # Use write mode
+            for box in result.boxes:
+                class_name = result.names[int(box.cls)]
+                if class_name == "defected": 
+                    file.write("1\n") 
+                else: 
+                    file.write("0\n")
+        time.sleep(1) # Introduce a delay
+```
+
+```mermaid
+    flowchart TD
+    Start([Start System]) --> Init[Initialize System Components]
+    Init --> InitCam[Initialize USB Camera]
+    Init --> InitModel[Load YOLOv8 Model]
+    Init --> InitSerial[Initialize Serial Communication]
+    Init --> InitServo[Initialize Servo Motor]
+    
+    InitCam & InitModel & InitSerial & InitServo --> Ready[System Ready]
+    
+    Ready --> CaptureFrame[Capture Frame from Camera]
+    CaptureFrame --> ProcessFrame[Process Frame through YOLOv8]
+    
+    ProcessFrame --> Detection{Detect Objects?}
+    Detection -->|No| CaptureFrame
+    
+    Detection -->|Yes| Classify{Classify Defect}
+    
+    Classify -->|Defected| Write1[Write '1' to data.txt]
+    Classify -->|Non-Defected| Write0[Write '0' to data.txt]
+    
+    Write1 & Write0 --> ReadFile[wxWidgets App Reads data.txt]
+    
+    ReadFile --> SendSerial[Send Data via Serial Port]
+    
+    SendSerial --> RecvSTM[STM32 Receives Data]
+    
+    RecvSTM --> CheckData{Check Data Value}
+    
+    CheckData -->|1| Delay1[Wait 1 second]
+    Delay1 --> RotateServo[Rotate Servo 130°]
+    RotateServo --> ResetServo[Reset Servo to 0°]
+    ResetServo --> CaptureFrame
+    
+    CheckData -->|0| CaptureFrame
+    
+    style Start fill:#b8e994
+    style Ready fill:#78e08f
+    style Detection fill:#e55039
+    style Classify fill:#e55039
+    style CheckData fill:#e55039
+    style Write1 fill:#4a69bd
+    style Write0 fill:#4a69bd
+    style SendSerial fill:#f6b93b
+    style RecvSTM fill:#f6b93b
+    style RotateServo fill:#fa983a
