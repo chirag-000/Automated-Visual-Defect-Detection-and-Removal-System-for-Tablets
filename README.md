@@ -105,13 +105,13 @@ for result in results:
     
     CheckData -->|0| CaptureFrame
     
-    style Start fill:#b8e994
-    style Ready fill:#78e08f
+    style Start fill:#507436
+    style Ready fill:#407C4E
     style Detection fill:#e55039
     style Classify fill:#e55039
     style CheckData fill:#e55039
     style Write1 fill:#4a69bd
     style Write0 fill:#4a69bd
-    style SendSerial fill:#f6b93b
-    style RecvSTM fill:#f6b93b
-    style RotateServo fill:#fa983a
+    style SendSerial fill:#A8760F
+    style RecvSTM fill:#A8760F
+    style RotateServo fill:#BF7229
