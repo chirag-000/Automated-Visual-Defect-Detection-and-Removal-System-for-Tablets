@@ -45,7 +45,7 @@ Launch vscode in the conda env, run this is python script ([`script.py`](https:/
 * Load the YOLOv8 model and run inference.
 * Write detection results (1 for defected, 0 for non-defected) to data.txt.
 * Added a 1-second delay before writing to avoid redundant detections.
-```
+```python
 from ultralytics import YOLO
 import time
 
