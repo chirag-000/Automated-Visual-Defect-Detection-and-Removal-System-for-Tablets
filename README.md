@@ -12,7 +12,6 @@ I have integrated a custom YOLOv8 model for visual inspection. The is designed t
     * USB camera for real-time image capture
     * Servo motor for physical removal of defective tablets.
 
-
 ## Workflow
 These steps represent the approach I followed to implement the system. However, other approaches or variations in hardware, software, and communication methods may also be used to achieve similar functionality.
 
@@ -30,4 +29,10 @@ These steps represent the approach I followed to implement the system. However, 
 ### 2.  Model Training & Exporting
 * Trained the custom YOLOv8 model on Google Colab using Ultralytics YOLOv8 framework. You can check out the [ipynb code above](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/defect_detection1.ipynb). I followed the same [tutorial](https://youtu.be/wuZtUMEiKWY?si=PZ66WE1yqIztybXL) mentioned above.
 * Achieved 99.2% mAP (Mean Average Precision), in this [model](https://universe.roboflow.com/fyp-qjwy0/tablet-defect-detection-er87f/model/3).
-* Exported the trained model (best.pt). Which can be done [this way](https://youtu.be/WbomGeoOT_k?t=20&si=TR5ZRDD82689muMX).
+* Exported the trained [model (best.pt)](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/best.pt). Which can be done [this way](https://youtu.be/WbomGeoOT_k?t=20&si=TR5ZRDD82689muMX).
+
+### 3. Environment Setup
+
+You can follow these steps to run inference on this model, assuming you have anaconda3 installed just import this [yaml]() file to a new <br>
+or follow any tutorial like [this](https://youtu.be/IHbJcOex6dk?t=318&si=qtvQ1Dr2ayxCmYeS), to run the model on your computer.
+
