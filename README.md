@@ -27,12 +27,12 @@ These steps represent the approach I followed to implement the system. However, 
 * Exported the dataset and loaded it into Google Colab for training.
 
 ### 2.  Model Training & Exporting
-* Trained the custom YOLOv8 model on Google Colab using Ultralytics YOLOv8 framework. You can check out the [ipynb code above](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/defect_detection1.ipynb). I followed the same [tutorial](https://youtu.be/wuZtUMEiKWY?si=PZ66WE1yqIztybXL) mentioned above.
+* Trained the custom YOLOv8 model on Google Colab using Ultralytics YOLOv8 framework. You can check out the code at [`defect_detection1.ipynb`](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/defect_detection1.ipynb). I followed the same [tutorial](https://youtu.be/wuZtUMEiKWY?si=PZ66WE1yqIztybXL) mentioned above.
 * Achieved 99.2% mAP (Mean Average Precision), in this [model](https://universe.roboflow.com/fyp-qjwy0/tablet-defect-detection-er87f/model/3).
-* Exported the trained [model (best.pt)](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/best.pt). Which can be done [this way](https://youtu.be/WbomGeoOT_k?t=20&si=TR5ZRDD82689muMX).
+* Exported the trained [model (`best.pt`)](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/best.pt). Which can be done [this way](https://youtu.be/WbomGeoOT_k?t=20&si=TR5ZRDD82689muMX).
 
 ### 3. Environment Setup
 
-You can follow these steps to run inference on this model, assuming you have anaconda3 installed just import this [yaml]() file to a new <br>
-or follow any tutorial like [this](https://youtu.be/IHbJcOex6dk?t=318&si=qtvQ1Dr2ayxCmYeS), to run the model on your computer.
+You can follow these steps to run inference on this model, assuming you have anaconda3 installed just import this [`environment.yml`](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/environment.yml) file to a new environment. <br>
+Or follow any tutorial like [this](https://youtu.be/IHbJcOex6dk?t=318&si=qtvQ1Dr2ayxCmYeS), to run the model on your computer.
 
