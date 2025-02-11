@@ -33,6 +33,7 @@ These steps represent the approach I followed to implement the system. However, 
 
 ### 3. Environment Setup
 
-You can follow these steps to run inference on this model, assuming you have anaconda3 installed just import this [`environment.yml`](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/environment.yml) file to a new environment. <br>
+You can follow these steps to run inference on this model: <br>
+assuming you have anaconda3 installed just import this [`environment.yml`](https://github.com/chirag-000/Automated-Visual-Defect-Detection-and-Removal-System-for-Tablets/blob/main/environment.yml) file to a new environment. <br>
 Or follow any tutorial like [this](https://youtu.be/IHbJcOex6dk?t=318&si=qtvQ1Dr2ayxCmYeS), to run the model on your computer.
 
