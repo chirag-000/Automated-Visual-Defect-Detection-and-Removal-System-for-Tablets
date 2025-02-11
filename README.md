@@ -1,6 +1,9 @@
 # Automated-Visual-Defect-Detection-Removal-System-for-Tablets
 The system uses machine learning, real-time communication, and embedded systems to perform defect detection and physical removal of defective units. This project demonstrates the integration of computer vision, microcontroller programming, and mechanical design for a complete automated manufacturing solution.
 
+![System Overview](https://github.com/user-attachments/assets/16827f58-5657-4340-a0e0-da4cf24a2ba9 "System Overview")
+
+
 I have integrated a custom YOLOv8 model for visual inspection. The is designed to detect any defects in tablets moving along a conveyor belt and immediately remove the defective ones using a servo motor controlled by an STM32 microcontroller. Additionally, I established serial communication between the STM32 and a wxWidgets application (to send data from computer computer to STM32 via usb port), allowing for real-time defect logging and management.
 
 ## Technologies Used
