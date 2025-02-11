@@ -68,6 +68,8 @@ for result in results:
                     file.write("0\n")
         time.sleep(1) # Introduce a delay
 ```
+#### Process Flowchart:
+Untill now we have implemented upto writing the predictions to the `data.txt` file, now this data should be sent to the STM32 via serial port to control the servo motor action accordingly, which is explained in the upcoming steps
 
 ```mermaid
     flowchart TD
