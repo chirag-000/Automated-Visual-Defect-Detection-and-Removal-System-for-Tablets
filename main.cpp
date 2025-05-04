@@ -1,1 +1,1 @@
-// code is not available for public view right now
+// code is not available right now
